@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import './Counter.css';
 import Display from "./Display";
 import ButtonsPanel from "./ButtonsPanel";
+import Step from "./Step";
 
 /*function Counter(props) {
     return (<div className="counter">
@@ -65,7 +66,8 @@ class Counter extends Component {
         <div className="counter">
             Counter:
             <Display displayValue={this.state.counterValue} />
-            <ButtonsPanel buttonMethod={this.changeValue} />
+            <ButtonsPanel buttonMethod={this.changeValue} stepValue={this.state.stepValue}/>
+            <Step />
         </div>);
     }
 }
