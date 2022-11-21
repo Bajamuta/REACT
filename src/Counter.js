@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './Counter.css';
 import Display from "./Display";
+import ButtonsPanel from "./ButtonsPanel";
 
 /*function Counter(props) {
     return (<div className="counter">
@@ -31,11 +32,30 @@ class Counter extends Component {
     * */
 
     //ES6
-    add = () => {
-        this.setState((prevState) => {
-            return ({
-               counterValue: prevState.counterValue + 1
-            });
+    changeValue = (action) => {
+        let current = this.state.counterValue;
+
+        switch (action) {
+            case 'substract': {
+                current -= 1;
+                break;
+            }
+            case 'reset': {
+                current = 0;
+                break;
+            }
+            case 'init': {
+                current = this.props.initValue;
+                break;
+            }
+            case 'add': {
+                current += 1;
+                break;
+            }
+        }
+
+        this.setState({
+            counterValue: current
         })
     }
 
@@ -44,7 +64,7 @@ class Counter extends Component {
         <div className="counter">
             Counter:
             <Display displayValue={this.state.counterValue} />
-            <button onClick={this.add}>Add 1</button>
+            <ButtonsPanel buttonMethod={this.changeValue} />
         </div>);
     }
 }
