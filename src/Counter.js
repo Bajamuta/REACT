@@ -36,7 +36,7 @@ class Counter extends Component {
         let current = this.state.counterValue;
 
         switch (action) {
-            case 'substract': {
+            case 'subtract': {
                 current -= 1;
                 break;
             }

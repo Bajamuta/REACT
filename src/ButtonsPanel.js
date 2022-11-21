@@ -5,7 +5,7 @@ function ButtonsPanel(props) {
     return (
         <div className="buttons-panel">
             <button onClick={() => {
-                props.buttonMethod('substract');
+                props.buttonMethod('subtract');
             }}>-</button>
             <button onClick={() => {
                 props.buttonMethod('reset');
