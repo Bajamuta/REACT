@@ -1,10 +1,11 @@
 import React from "react";
+import './Display.css';
 
 function Display(props) {
     return(
-        <span className="value">
+        <span className={`value ${(props.displayValue <= 5 ? 'red' : 'green') }`}>
                 {props.displayValue}
-            </span>
+         </span>
     );
 }
 
