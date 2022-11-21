@@ -1,0 +1,11 @@
+.counter {
+    width: 400px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 2px solid red;
+}
+
+.value {
+    font-weight: bold;
+    margin-left: 10px;
+}
