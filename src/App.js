@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">React App</h1>
       </header>
-        <Counter/>
+        <Counter initValue={108}/>
     </div>
   );
 }
