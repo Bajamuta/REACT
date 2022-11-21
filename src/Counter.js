@@ -18,7 +18,8 @@ class Counter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            counterValue: this.props.initValue
+            counterValue: this.props.initValue,
+            stepValue: 1
         }
         /*
         * ES5 METHOD

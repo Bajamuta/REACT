@@ -6,7 +6,7 @@ function ButtonsPanel(props) {
         <div className="buttons-panel">
             <button onClick={() => {
                 props.buttonMethod('subtract');
-            }}>-</button>
+            }}>- {props.stepValue}</button>
             <button onClick={() => {
                 props.buttonMethod('reset');
             }}>Reset to 0</button>
@@ -15,7 +15,7 @@ function ButtonsPanel(props) {
             }}>Init value</button>
             <button onClick={() => {
                 props.buttonMethod('add')
-            }}>+</button>
+            }}>+ {props.stepValue}</button>
         </div>
     );
 }
