@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import './Counter.css';
+import Display from "./Display";
 
 /*function Counter(props) {
     return (<div className="counter">
@@ -42,9 +43,7 @@ class Counter extends Component {
         return (
         <div className="counter">
             Counter:
-            <span className="value">
-                {this.state.counterValue}
-            </span>
+            <Display displayValue={this.state.counterValue} />
             <button onClick={this.add}>Add 1</button>
         </div>);
     }
