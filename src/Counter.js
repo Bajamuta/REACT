@@ -33,29 +33,30 @@ class Counter extends Component {
 
     //ES6
     changeValue = (action) => {
-        let current = this.state.counterValue;
+        this.setState((prevState, prevProps) => {
+            let current = prevState.counterValue;
 
-        switch (action) {
-            case 'subtract': {
-                current -= 1;
-                break;
+            switch (action) {
+                case 'subtract': {
+                    current -= 1;
+                    break;
+                }
+                case 'reset': {
+                    current = 0;
+                    break;
+                }
+                case 'init': {
+                    current = prevProps.initValue;
+                    break;
+                }
+                case 'add': {
+                    current += 1;
+                    break;
+                }
             }
-            case 'reset': {
-                current = 0;
-                break;
-            }
-            case 'init': {
-                current = this.props.initValue;
-                break;
-            }
-            case 'add': {
-                current += 1;
-                break;
-            }
-        }
-
-        this.setState({
-            counterValue: current
+            return ({
+                counterValue: current
+            });
         })
     }
 
