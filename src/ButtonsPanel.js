@@ -18,7 +18,7 @@ function ButtonsPanel(props) {
             <button onClick={() => {
                 props.buttonMethod('add')
             }}>+ {props.stepValue}</button>
-           {/* <Step stepMethod={props.stepChange} />*/}
+            <Step stepMethod={props.stepChange} />
         </div>
     );
 }

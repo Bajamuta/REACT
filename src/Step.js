@@ -14,7 +14,7 @@ class Step extends Component{
             <div className="input-panel">
                 <label>Step:</label>
                 <input type="number"
-                       onChange={() => this.props.stepMethod(this._inputStep)}
+                       onChange={() => this.props.stepMethod(parseInt(this._inputStep.value))}
                        defaultValue={1} min={1}
                        ref={(data) => { this._inputStep = data} }/>
             </div>
