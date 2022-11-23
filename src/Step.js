@@ -1,13 +1,25 @@
-import React from "react";
+import React, {Component} from "react";
 import './Step.css';
 
-function Step(props) {
-    return(
-        <div className="input-panel">
-            <label>Step:</label>
-            <input type="number" id="step" name="step" defaultValue={1} min={1}/>
-        </div>
-    );
+class Step extends Component{
+    _inputStep;
+
+    constructor(props) {
+        super(props);
+    }
+
+
+    render() {
+        return(
+            <div className="input-panel">
+                <label>Step:</label>
+                <input type="number"
+                       onChange={() => this.props.stepMethod(this._inputStep)}
+                       defaultValue={1} min={1}
+                       ref={(data) => { this._inputStep = data} }/>
+            </div>
+        );
+    }
 }
 
 export default Step;

@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import './Counter.css';
 import Display from "./Display";
 import ButtonsPanel from "./ButtonsPanel";
-import Step from "./Step";
 
 /*function Counter(props) {
     return (<div className="counter">
@@ -40,7 +39,7 @@ class Counter extends Component {
 
             switch (action) {
                 case 'subtract': {
-                    current -= 1;
+                    current -= prevState.stepValue;
                     break;
                 }
                 case 'reset': {
@@ -52,8 +51,11 @@ class Counter extends Component {
                     break;
                 }
                 case 'add': {
-                    current += 1;
+                    current += prevState.stepValue;
                     break;
+                }
+                default: {
+                    current = prevProps.initValue;
                 }
             }
             return ({
@@ -62,13 +64,20 @@ class Counter extends Component {
         })
     }
 
+    updateStep = (value) => {
+        this.setState({
+            stepValue: value
+        })
+    }
+
     render() {
         return (
         <div className="counter">
             Counter:
             <Display displayValue={this.state.counterValue} />
-            <ButtonsPanel buttonMethod={this.changeValue} stepValue={this.state.stepValue}/>
-            <Step />
+            <ButtonsPanel buttonMethod={this.changeValue}
+                          stepChange={this.updateStep}
+                          stepValue={this.state.stepValue}/>
         </div>);
     }
 }

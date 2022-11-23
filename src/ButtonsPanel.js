@@ -1,7 +1,9 @@
 import React from "react";
 import './ButtonsPanel.css';
+import Step from "./Step";
 
 function ButtonsPanel(props) {
+
     return (
         <div className="buttons-panel">
             <button onClick={() => {
@@ -16,6 +18,7 @@ function ButtonsPanel(props) {
             <button onClick={() => {
                 props.buttonMethod('add')
             }}>+ {props.stepValue}</button>
+           {/* <Step stepMethod={props.stepChange} />*/}
         </div>
     );
 }
